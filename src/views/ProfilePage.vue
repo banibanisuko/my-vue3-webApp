@@ -271,132 +271,147 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="container">
-    <div class="register-card">
-      <div class="wrapper">
-        <form @submit.prevent="handleSubmit">
-          <div v-if="errorMessage" class="error-message">
-            {{ errorMessage }}
-          </div>
-
-          <div>
-            <label for="image">プロフィール画像</label>
-            <PhotoDragDrop v-model="localProfilePhoto" :maxCount="1" />
-          </div>
-
-          <!-- 生年月日 -->
-          <div>
-            <p>生年月日</p>
-            <BirthDate v-model="localBirthDate" />
-          </div>
-
-          <!-- 名前 -->
-          <div>
-            <br /><label for="userName">名前</label>
-            <TextInput
-              id="userName"
-              class="userName"
-              name="userName"
-              type="text"
-              v-model="localUserName"
-            />
-          </div>
-          <div>
-            <br /><label for="body">プロフィール本文</label>
-            <TextInput
-              id="body"
-              class="body"
-              name="body"
-              type="textarea"
-              v-model="localBody"
-            />
-          </div>
-
-          <!-- パスワード -->
-
-          <br /><label for="password">パスワード</label>
-
-          <!-- 編集中で表示状態：パスワード入力欄 -->
-
-          <TextInput
-            id="password"
-            class="password"
-            name="password"
-            type="password"
-            v-model="localPassword"
-          />
-
-          <!-- 年齢制限表示設定 -->
-          <br />
-          <p>年齢制限ありの画像を表示する</p>
-          <div class="radio-buttons">
-            <span class="radio">
-              <RadioInput
-                id="show"
-                name="certificate18"
-                value="1"
-                label="表示"
-                v-model="localCertificate18"
-              />
-            </span>
-            <span class="radio">
-              <RadioInput
-                id="hide"
-                name="certificate18"
-                value="0"
-                label="非表示"
-                v-model="localCertificate18"
-              />
-            </span>
-          </div>
-          <div class="submit-edit">
-            <IconButton type="submit" label="保存する" />
-          </div>
-        </form>
-      </div>
+  <form @submit.prevent="handleSubmit">
+    <div v-if="errorMessage" class="error-message">
+      {{ errorMessage }}
     </div>
-  </div>
+
+    <div>
+      <label for="image">プロフィール画像:</label>
+      <PhotoDragDrop v-model="localProfilePhoto" :maxCount="1" />
+    </div>
+
+    <!-- 生年月日 -->
+    <div>
+      <p>
+        【生年月日】<br />
+        {{ localBirthDate ? localBirthDate : 'なし' }}
+      </p>
+      <template v-if="isEditingBirthDate">
+        <BirthDate v-model="localBirthDate" />
+      </template>
+    </div>
+
+    <!-- 名前 -->
+    <div>
+      <br /><label for="userName">【名前】</label>
+      <template v-if="isEditingUserName">
+        <TextInput
+          id="userName"
+          class="userName"
+          name="userName"
+          type="text"
+          v-model="localUserName"
+        />
+      </template>
+      <template v-else>
+        <br /><span>{{ localUserName }}</span>
+      </template>
+    </div>
+
+    <div>
+      <br /><label for="body">【プロフィール本文】</label>
+      <template v-if="isEditingBody">
+        <TextInput
+          id="body"
+          class="body"
+          name="body"
+          type="textarea"
+          v-model="localBody"
+        />
+      </template>
+      <template v-else>
+        <br /><span>{{ localBody }}</span>
+      </template>
+    </div>
+
+    <!-- パスワード -->
+    <div>
+      <br /><label for="password">【パスワード】</label>
+
+      <!-- 編集中で表示状態：パスワード入力欄 -->
+      <template v-if="isEditingPassword">
+        <TextInput
+          id="password"
+          class="password"
+          name="password"
+          type="password"
+          v-model="localPassword"
+        />
+      </template>
+
+      <!-- 編集中で伏せ字状態：●●●と表示＋表示ボタン -->
+      <template v-else-if="passwordHide">
+        <br />
+        <span>●●●●●●</span>
+        <br />
+      </template>
+
+      <!-- 編集していない：通常表示 -->
+      <template v-else>
+        <br />
+        <span>{{ displayPassword }}</span>
+        <br />
+      </template>
+    </div>
+
+    <!-- 年齢制限表示設定 -->
+    <br />
+    <p>【年齢制限ありの画像を表示する】</p>
+    <div class="radio-buttons">
+      <span class="radio">
+        <RadioInput
+          id="show"
+          name="certificate18"
+          value="1"
+          label="表示"
+          v-model="localCertificate18"
+        />
+      </span>
+      <span class="radio">
+        <RadioInput
+          id="hide"
+          name="certificate18"
+          value="0"
+          label="非表示"
+          v-model="localCertificate18"
+        />
+      </span>
+    </div>
+    <IconButton label="編集する" />
+  </form>
 </template>
 
 <style scoped>
-.container {
-  width: 100%;
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  gap: 5px;
 }
-
-.register-card {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-width: 320px;
-  max-width: 380px;
-  width: 100%;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 30px;
-}
-
-.label {
-  display: block;
-  text-align: left;
+.birthday-select select {
+  appearance: none;
+  background-color: white;
+  color: black;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin: 0 4px 8px 0;
   font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #222;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
-
-.submit-edit {
+.birthday-select select:focus {
+  border-color: black;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.birthday-select {
   display: flex;
-  justify-content: flex-end; /* 右寄せ */
-  padding-top: 20px;
-  margin-bottom: -20px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 </style>
