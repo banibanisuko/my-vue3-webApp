@@ -78,7 +78,7 @@ const handleSubmit = () => {
     <form @submit.prevent="handleSubmit">
       <div class="login">
         <br />
-        <label for="loginid">ログインID : </label>
+        <label for="loginid">ログインID</label>
         <TextInput
           id="loginid"
           className="loginid"
@@ -86,7 +86,7 @@ const handleSubmit = () => {
           v-model="loginid"
           required
         />
-        <label for="password">パスワード : </label>
+        <label for="password">パスワード</label>
         <TextInput
           id="password"
           className="password"
