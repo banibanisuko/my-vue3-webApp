@@ -44,6 +44,16 @@ export type Image = {
   sort_order: number
 }
 
+export type PostEdit = {
+  illust_title: string
+  tags: string
+  illust_body: string
+  public: string
+  R18: string
+  thumbnail_url: string
+  images?: Image[] // ← ここ追加！
+}
+
 // PostGallery（PostResponse を拡張）
 export interface PostGallery extends PostResponse {
   tags: number[]
