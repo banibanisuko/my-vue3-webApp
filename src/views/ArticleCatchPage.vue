@@ -5,19 +5,7 @@ import LinkCopy from '@/components/LinkCopy.vue'
 import SectionTitle from '@/basics/SectionTitle.vue'
 import ImageGallery from '../components/APImageGallery.vue'
 import { useUserStore } from '@/stores/user'
-
-export type PostResponse = {
-  illust_id: number
-  illust_title: string
-  illust_R18: number
-  profile_name: string
-  profile_photo: string
-  image_url: string
-  illust_profile_id: number
-  illust_body: string
-  illust_s_url: string
-  profile_login_id: string
-}
+import type { PostResponse } from '@/types/PostResponse'
 
 const posts = ref<PostResponse[]>([])
 const userStore = useUserStore()
