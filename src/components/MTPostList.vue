@@ -1,27 +1,9 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-
-export type Image = {
-  image_id: number
-  image_url: string
-  sort_order: number
-}
-
-export type PostResponse = {
-  illust_id: number
-  profile_id: number
-  illust_title: string
-  tags: number[]
-  thumbnail_url: string
-  illust_body: string
-  R18: number
-  profile_name: string
-  profile_photo: string
-  images: Image[]
-}
+import type { PostGallery } from '@/types/PostResponse'
 
 // props に images を含むように型定義
-const props = defineProps<{ posts: PostResponse[] }>()
+const props = defineProps<{ posts: PostGallery[] }>()
 </script>
 
 <template>

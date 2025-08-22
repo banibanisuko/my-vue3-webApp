@@ -50,6 +50,7 @@ export interface PostGallery extends PostResponse {
   images: Image[]
   prev_id: number
   next_id: number
+  R18: number
 }
 
 // PostGallery（PostResponse を拡張）
