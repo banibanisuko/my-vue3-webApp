@@ -58,7 +58,7 @@ export interface Postvalidation extends PostResponse {
   R18: number
 }
 
-// お気に入り
+// FVImageGallery
 export interface Favorite extends PostResponse {
   profile_id: number
   public: number

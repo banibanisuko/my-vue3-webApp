@@ -1,17 +1,7 @@
 <script setup lang="ts">
-export type PostResponse = {
-  illust_id: number
-  profile_id: number
-  illust_title: string
-  thumbnail_url: string
-  illust_body: string
-  public: number
-  profile_name: string
-  profile_photo: string
-  showProfile: boolean
-}
+import type { Favorite } from '@/types/PostResponse'
 
-const props = defineProps<{ posts: PostResponse[] }>()
+const props = defineProps<{ posts: Favorite[] }>()
 
 // タイトルを9文字で省略
 const truncatedTitle = (illust_title: string) =>
