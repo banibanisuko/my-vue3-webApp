@@ -11,25 +11,24 @@ export type Comment = {
 }
 
 // 投稿基本情報
-export interface PostResponse {
+export type PostResponse = {
   illust_id: number
   illust_title: string
   illust_body: string
   thumbnail_url: string
-  illust_R18: number
   profile_name: string
   profile_photo: string
   profile_login_id: string
 }
 
 // コメントレスポンス
-export interface CommentResponse {
+export type CommentResponse = {
   success: boolean
   comment: Comment[]
 }
 
 // プロフィール情報
-export interface ProfileResponse {
+export type ProfileResponse = {
   profile_id: number
   profile_name: string
   profile_body: string
@@ -51,6 +50,11 @@ export interface PostGallery extends PostResponse {
   images: Image[]
   prev_id: number
   next_id: number
+}
+
+// PostGallery（PostResponse を拡張）
+export interface Postvalidation extends PostResponse {
+  R18: number
 }
 
 // お気に入り

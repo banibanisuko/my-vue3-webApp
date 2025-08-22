@@ -9,16 +9,15 @@ export type Image = {
 }
 
 export type PostResponse = {
-  id: number
-  p_id: number
-  title: string
+  illust_id: number
+  profile_id: number
+  illust_title: string
   tags: number[]
-  url: string
-  body: string
+  thumbnail_url: string
+  illust_body: string
   R18: number
-  s_url: string
-  p_name: string
-  p_photo: string
+  profile_name: string
+  profile_photo: string
   images: Image[]
 }
 

@@ -1,9 +1,9 @@
 <!-- ArticleCatchPage 画像ギャラリー（1ファイル版） -->
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import type { PostResponse } from '@/types/PostResponse'
+import type { Postvalidation } from '@/types/PostResponse'
 
-const props = defineProps<{ posts: PostResponse[] }>()
+const props = defineProps<{ posts: Postvalidation[] }>()
 </script>
 
 <template>
@@ -17,7 +17,7 @@ const props = defineProps<{ posts: PostResponse[] }>()
               :alt="post.illust_title"
               class="image"
             />
-            <div v-if="post.illust_R18" class="blur-overlay">R18</div>
+            <div v-if="post.R18" class="blur-overlay">R18</div>
             <!-- ▼ 非公開ラベルの例（仮で非公開固定表示、動的に切り替える場合は別途条件式が必要） -->
             <div class="private-label">非公開</div>
           </div>

@@ -5,9 +5,9 @@ import LinkCopy from '@/components/LinkCopy.vue'
 import SectionTitle from '@/basics/SectionTitle.vue'
 import ImageGallery from '../components/APImageGallery.vue'
 import { useUserStore } from '@/stores/user'
-import type { PostResponse } from '@/types/PostResponse'
+import type { Postvalidation } from '@/types/PostResponse'
 
-const posts = ref<PostResponse[]>([])
+const posts = ref<Postvalidation[]>([])
 const userStore = useUserStore()
 const id = ref(userStore.id)
 
