@@ -350,6 +350,7 @@ export default defineComponent({
             </span>
           </div>
           <div class="submit-edit">
+            <IconButton label="キャンセル" backgroundColor="#ccc" />
             <IconButton type="submit" label="保存する" />
           </div>
         </form>
@@ -395,8 +396,8 @@ export default defineComponent({
 
 .submit-edit {
   display: flex;
-  justify-content: flex-end; /* 右寄せ */
-  padding-top: 20px;
-  margin-bottom: -20px;
+  justify-content: space-between; /* 左右に配置 */
+  align-items: center; /* 高さ揃え */
+  margin-top: 40px;
 }
 </style>
