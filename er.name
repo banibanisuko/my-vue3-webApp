@@ -1,0 +1,121 @@
+[33m6341659[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/notification[m[33m, [m[1;31morigin/feature/notification[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m Merge pull request #42 from banibanisuko/feature/refacter
+[33mdce2aac[m プロフィール画面表示修正
+[33m6143842[m 検索画面動作修正
+[33mcda92d7[m 記事取得API修正
+[33md7875ea[m 検索コンポーネント修正完了
+[33m8c4ace6[m 検索コンポーネント作成
+[33mce9bcf3[m タグ検索動作修正
+[33md9cc25a[m 投稿画面プロフィール部分修正
+[33mda4223a[m プレビューページフロント修正
+[33m493381c[m フォーム外カードエリアコンポーネント化
+[33mdeb8255[m プロフィールページ作成
+[33md6458a9[m Merge pull request #41 from banibanisuko/feature/follow
+[33m2971490[m コメントコンポーネント動作修正
+[33mad6e928[m PHP可読性修正
+[33mc85e004[m コード全体をsetup記法へ修正
+[33m0b81ae0[m テキスト入力コンポーネント修正
+[33m59abbdd[m ログアウトモーダルコード修正
+[33mef5f01b[m 削除ボタンコード修正
+[33mc4edecc[m 記事投稿画面コード修正
+[33m1864843[m Merge pull request #40 from banibanisuko/feature/follow
+[33mb3b58bb[m 記事投稿画面動作修正
+[33m76986b2[m 記事編集画面動作修正
+[33m186100a[m 記事投稿機能型定義バグ修正
+[33m09dee02[m コメント機能型定義修正
+[33mf1fc35d[m ユーザー投稿一覧型定義修正
+[33m93390fe[m いいね機能型定義修正
+[33m1b8ea83[m 記事閲覧周辺型定義別ファイル化
+[33m9fab7bc[m 記事閲覧周辺型定義修正
+[33mde6f1a8[m トップページ型定義修正
+[33m27ddf9b[m 記事投稿ページコード修正
+[33mba65d72[m プレビュー画面改修中断
+[33m480a2e4[m プロフィール画面改修
+[33mf5db562[m 生年月日入力コンポーネントCSS修正
+[33mf42e275[m 本登録画面CSS修正
+[33mee44f2c[m 仮登録画面CSS修正
+[33mf5534cf[m コメント機能完成
+[33m1a35125[m Merge pull request #38 from banibanisuko/feature/follow
+[33m3bb5602[m コメント機能ひな形完成
+[33m84599ed[m コメント投稿API完成
+[33m0234c82[m コメント取得API完成
+[33mf2e32b2[m コメントコンポーネントフロント修正
+[33m12fd75f[m 画面タイトルコンポーネント作成
+[33m6d94b04[m 記事編集画面CSS修正
+[33m980bf53[m 画像投稿ページCSS修正
+[33mfb22549[m リンクコピーコンポーネント作成
+[33mfcdcfd4[m ボタンコンポーネント修正
+[33m54144c6[m 記事登録画面フロント修正
+[33m86361f7[m Merge pull request #37 from banibanisuko/feature/follow
+[33m1e78bb4[m 検索画面API変更
+[33ma3e489d[m 検索API改修
+[33m005fdc2[m Merge pull request #35 from banibanisuko/feature/profile
+[33m6b3cd8a[m ユーザー個別投稿画面作成
+[33md34815a[m Merge pull request #33 from banibanisuko/feature/postList
+[33m7529ba8[m いいね機能画面改修
+[33m54382d6[m いいね機能動作確認
+[33m9dc80d9[m Merge pull request #32 from banibanisuko/feature/postList
+[33m259c5de[m 本登録機能作成
+[33mb7f87b1[m 本登録URL送付API作成
+[33m22e3168[m ログイン画面フロント修正
+[33m259cfea[m Merge pull request #31 from banibanisuko/feature/mypage
+[33m647d45b[m イラスト一覧画面フロント修正
+[33m426c0ca[m Merge pull request #30 from banibanisuko/feature/signin
+[33mf374f18[m イラスト一覧ページAPI修正
+[33m4f5e34e[m コンポーネント格納位置修正
+[33m0b60395[m Merge pull request #29 from banibanisuko/feature/logout
+[33m78177cc[m ログアウト機能作成
+[33mf3dce2a[m Merge pull request #28 from banibanisuko/feature/logout
+[33m888ffdd[m 削除APIクエリ修正
+[33ma8c2460[m Merge pull request #27 from banibanisuko/develop
+[33m6552527[m Merge pull request #26 from banibanisuko/feature/logout
+[33m6d70619[m モーダルコンポーネント修正
+[33m1301cab[m Merge pull request #25 from banibanisuko/feature/sighin
+[33m83e252c[m ログイン画面routerリンク修正
+[33mf890d7b[m Merge pull request #24 from banibanisuko/develop
+[33m9b18888[m Merge pull request #23 from banibanisuko/refactor-CSS
+[33m3f22291[m router-pass修正
+[33mdabe89d[m とりあえず
+[33med0a730[m Merge pull request #22 from banibanisuko/develop
+[33mb4c1146[m Merge pull request #21 from banibanisuko/feature/refactor-CSS
+[33m62f0ebe[m ヘッダーモック作成
+[33mb3eab28[m Merge pull request #20 from banibanisuko/develop
+[33m7016dcf[m Merge branch 'main' into develop
+[33m74d4d4e[m Merge pull request #19 from banibanisuko/feature/profileDisplay
+[33m78d34e5[m モックアップ作成
+[33m5c55f39[m プロフィール画面修正
+[33mfa2cfc2[m Merge pull request #18 from banibanisuko/feature/profileDisplay
+[33m0f4137c[m router周辺改修
+[33m34ec88f[m Merge pull request #17 from banibanisuko/feature/refactor-prevNextButtons
+[33m3132208[m 記事画面CSS修正
+[33md843cab[m Merge pull request #16 from banibanisuko/feature/logout
+[33m9d29023[m 画像複数投稿機能バグ修正および軽微なCSS修正
+[33m84b105a[m Merge pull request #15 from banibanisuko/feature/logout
+[33m76fe894[m 記事ページ改修、前後ページボタン追加
+[33mf6b1d5a[m Merge pull request #14 from banibanisuko/develop
+[33mbecdbe2[m Merge pull request #13 from banibanisuko/feature/logout
+[33m643ff00[m プロフィール編集機能完成
+[33m0b9d5ab[m Merge pull request #12 from banibanisuko/feature/logout
+[33m45a43ab[m プロフィール編集画面動作制作中
+[33m2cd2499[m Merge pull request #11 from banibanisuko/develop
+[33mcdfab7b[m Merge pull request #10 from banibanisuko/feature/refactor-css
+[33m4c9cd33[m 複数画像登録機能改修およびCSS修正
+[33m21f5f93[m Merge pull request #9 from banibanisuko/develop
+[33m9612f32[m Merge pull request #8 from banibanisuko/feature/refactor-Images-EditForm
+[33ma983c24[m 記事ページCSS修正
+[33m69fdf4d[m Merge pull request #7 from banibanisuko/feature/refactor-Images-EditForm
+[33m27d15e8[m 記事編集ページのroute修正および不要ページ削除
+[33md34ad94[m Merge pull request #6 from banibanisuko/feature/refactor-Images-EditForm
+[33m9f54f1e[m 記事編集ページの複数画像表示対応
+[33me802b9f[m 記事編集ページの複数画像表示対応
+[33mbb190db[m Merge pull request #5 from banibanisuko/develop
+[33ma269301[m Merge pull request #4 from banibanisuko/feature/refactor-Images-Component
+[33ma2d6cc0[m 画像複数表示部分をコンポーネント化
+[33m94f6ca5[m Merge pull request #3 from banibanisuko/feature/refactor-Images
+[33m1841f26[m '画像複数表示対応'
+[33mf99f0ad[m Merge pull request #2 from banibanisuko/feature/renovation-Images
+[33m0dcd75c[m 画像投稿フォームCSS修正
+[33m1cb2853[m 画像投稿フォームを最新の状態に修正
+[33m7c1a129[m Merge pull request #1 from banibanisuko/feature/edit-before
+[33mbb3494f[m 画像の複数アップロードに対応
+[33m189e8c7[m 画像アップロード機能改修前
+[33med50485[m 初期コミット
