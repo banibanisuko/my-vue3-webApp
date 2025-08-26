@@ -50,7 +50,7 @@ const fetchByWords = async (queryWords: string) => {
       `https://yellowokapi2.sakura.ne.jp/Vue/api/Illust_tagsSearchAPI.php?words=${words.value}`,
     )
     const data = await response.json()
-    console.log('APIレスポンス(words):', data)
+    //console.log('APIレスポンス(words):', data)
 
     if (Array.isArray(data)) {
       posts.value = data.map((post: Favorite) => ({

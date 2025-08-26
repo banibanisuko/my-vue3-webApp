@@ -17,6 +17,7 @@ if (empty($words)) {
 
 // カンマ区切りで配列化
 $wordList = array_map('trim', explode(',', $words));
+$wordCount = count($wordList);
 
 try {
     $pdo = new PDO($dsn, $user, $password);
@@ -26,19 +27,28 @@ try {
     exit;
 }
 
-// 検索ワードにマッチするイラストIDをサブクエリで取得する
-$idSelects = [];
 $params = [];
-foreach ($wordList as $word) {
-    // title or body でマッチするID
-    $idSelects[] = "SELECT id FROM illust WHERE title LIKE ? OR body LIKE ?";
-    array_push($params, "%$word%", "%$word%");
+$subQueries = [];
 
-    // tag name でマッチするID
-    $idSelects[] = "SELECT i_id FROM illust_tags INNER JOIN tags ON illust_tags.t_id = tags.id WHERE tags.name LIKE ?";
-    $params[] = "%$word%";
+foreach ($wordList as $word) {
+    // 各ワードについて、タイトル、本文(LIKE検索)、またはタグ(完全一致)に一致するイラストIDを取得するサブクエリ
+    $subQueries[] = "
+        (SELECT id FROM illust WHERE title LIKE ? OR body LIKE ?)
+        UNION
+        (SELECT i_id FROM illust_tags INNER JOIN tags ON illust_tags.t_id = tags.id WHERE tags.name = ?)
+    ";
+    array_push($params, "%$word%", "%$word%", $word); // tag検索のパラメータは完全一致
 }
-$subQuery = implode(" UNION ", $idSelects);
+
+// 各サブクエリを UNION ALL で結合し、各イラストIDの出現回数を数える
+// ワード数と同じ回数出現するIDが、AND検索の結果となる
+$intersectQuery = "
+    SELECT id FROM (
+        " . implode(" UNION ALL ", array_map(function($q) { return "($q)"; }, $subQueries)) . "
+    ) AS t
+    GROUP BY id
+    HAVING COUNT(id) = ?
+";
 
 $sql = "
     SELECT
@@ -63,10 +73,13 @@ $sql = "
     LEFT JOIN
         profile p ON p.id = i.p_id
     WHERE
-        i.id IN ($subQuery)
+        i.id IN ($intersectQuery)
     GROUP BY
         i.id
 ";
+
+// Add the word count for the HAVING clause
+array_push($params, $wordCount);
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);

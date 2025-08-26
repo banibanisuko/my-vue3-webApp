@@ -63,8 +63,6 @@ const submitSearch = () => {
       </svg>
     </button>
   </div>
-  <!-- デバッグ用: 分割後の配列表示 -->
-  {{ keywords }}
 </template>
 
 <style scoped>
