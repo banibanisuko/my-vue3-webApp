@@ -1,0 +1,1 @@
+import{_ as s,o,c as a,b as c,B as r}from"./index-lzizTrR5.js";const t={},n={class:"container"},d={class:"form-card"};function _(e,f){return o(),a("div",n,[c("div",d,[r(e.$slots,"default",{},void 0)])])}const l=s(t,[["render",_],["__scopeId","data-v-fb0a6650"]]);export{l as F};
